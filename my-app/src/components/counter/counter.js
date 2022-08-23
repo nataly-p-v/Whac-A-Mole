@@ -5,7 +5,9 @@ class Counter extends Component {
         return (
                 <header className={this.props.className}>
                      <h1>Whack-a-mole! <span className="score">{this.props.score}</span></h1>
-                      <button onClick={(event) => this.props.stopInterval(event)}>stop game</button>
+                      <button onClick={(event) => this.props.stopInterval(event)}>pause game</button>
+                      <button onClick={(event) => this.props.startInterval(event)}>{"continue game"}</button>
+                       <button onClick={(event) => this.props.restartGame(event)}>restart game</button>
                 </header>
         )
     }

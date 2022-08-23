@@ -7,7 +7,7 @@ class Holes extends Component {
     }
     render () {
         return (
-               <div className="game">
+               <div className={this.props.className}>
                     {this.props.number.map((elem, i) => {
 
                        return <Hole key={i} customClass={"hole"+i} currentId={this.props.currentId} customId={i} changeCount={this.props.changeCount}/>

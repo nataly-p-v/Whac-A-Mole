@@ -10,7 +10,7 @@ class GenerateGame extends Component {
                     <form>
                       <label>
                         Введите количество кротовьих нор:
-                        <input type="text" onChange={(event) => this.props.handleChange(event)}/>
+                        <input type="text" onChange={(event) => this.props.handleChange(event)} value={this.props.inputValue}/>
                       </label>
                       <input onClick={(event) => this.props.generateHoles(event)} type="submit" value="Start Game" />
                     </form>

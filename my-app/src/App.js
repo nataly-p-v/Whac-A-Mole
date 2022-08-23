@@ -20,6 +20,8 @@ class App extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.generateHoles = this.generateHoles.bind(this)
         this.stopInterval = this.stopInterval.bind(this)
+        this.startInterval = this.startInterval.bind(this)
+        this.restartGame = this.restartGame.bind(this)
     }
         generateHoles (event) {
          event.preventDefault();
@@ -48,7 +50,6 @@ class App extends Component {
 
     startInterval(){
         let self = this;
-
         let myInterval = setInterval(function() {
             let current = self.randomInteger(1, 6);
             self.setState({
@@ -62,13 +63,20 @@ class App extends Component {
     stopInterval(event) {
         clearInterval(this.state.interval);
     }
+    restartGame(event) {
+           this.setState({
+            isNotActive: true,
+            numberOfHoles:0
+           });
+
+        }
 
     render() {
         return (
             <div className="App">
-            <GenerateGameButton className={this.state.isNotActive ? 'StartGameButton' : 'StartGameButton hidden'} handleChange={this.handleChange} generateHoles={this.generateHoles}/>
-            <Counter className={this.state.isNotActive ? 'hidden' : 'visible'} stopInterval={this.stopInterval} score={this.state.score}/>
-            <Holes currentId={this.state.current} number={this.state.holes} changeCount={this.changeCount}/>
+            <GenerateGameButton className={this.state.isNotActive ? 'StartGameButton' : 'hidden'} handleChange={this.handleChange} generateHoles={this.generateHoles} value={this.state.numberOfHoles}/>
+            <Counter className={this.state.isNotActive ? 'hidden' : 'visible'} stopInterval={this.stopInterval} startInterval={this.startInterval} restartGame={this.restartGame} score={this.state.score}/>
+            <Holes currentId={this.state.current} number={this.state.holes} changeCount={this.changeCount} className={this.state.isNotActive ? 'game hidden' : 'game visible'}/>
             </div>
         );
     }
