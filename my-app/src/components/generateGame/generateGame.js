@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 
 class GenerateGame extends Component {
-    constructor(props) {
-        super(props);
-    }
     render () {
         return (
                 <div className={this.props.className}>
                     <form>
                       <label>
-                        Введите количество кротовьих нор:
+                        Please enter number of holes:
                         <input type="text" onChange={(event) => this.props.handleChange(event)} value={this.props.inputValue}/>
                       </label>
                       <input onClick={(event) => this.props.generateHoles(event)} type="submit" value="Start Game" />

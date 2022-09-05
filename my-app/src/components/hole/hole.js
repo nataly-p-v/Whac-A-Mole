@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 
 class Hole extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div
