@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import "./style.scss";
 import Holes from "./components/holes/holes.js";
 import GenerateGameButton from "./components/generateGame/generateGame.js";
 import Counter from "./components/counter/counter.js";
@@ -74,7 +74,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-            <GenerateGameButton className={this.state.isNotActive ? 'StartGameButton' : 'hidden'} handleChange={this.handleChange} generateHoles={this.generateHoles} value={this.state.numberOfHoles}/>
+            <GenerateGameButton className={this.state.isNotActive ? 'text-center visible' : 'hidden'} handleChange={this.handleChange} generateHoles={this.generateHoles} value={this.state.numberOfHoles}/>
             <Counter className={this.state.isNotActive ? 'hidden' : 'visible'} stopInterval={this.stopInterval} startInterval={this.startInterval} restartGame={this.restartGame} score={this.state.score}/>
             <Holes currentId={this.state.current} number={this.state.holes} changeCount={this.changeCount} className={this.state.isNotActive ? 'game hidden' : 'game visible'}/>
             </div>

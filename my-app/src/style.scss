@@ -1,3 +1,8 @@
+$body-color: black;
+
+body {
+  color: $body-color;
+}
 html {
   box-sizing: border-box;
   font-size: 10px;
@@ -13,12 +18,18 @@ body {
   margin:0;
   font-family: 'Amatic SC', cursive;
 }
+header{
+    text-align: center;
+}
 
 h1 {
   text-align: center;
   font-size: 10rem;
   line-height:1;
   margin-bottom: 0;
+}
+.text-center {
+    text-align: center;
 }
 
 .score {
@@ -40,22 +51,21 @@ h1 {
   flex: 1 0 33.33%;
   overflow: hidden;
   position: relative;
-}
-
-.hole:after {
-  display: block;
-  background: url(dirt.svg) bottom center no-repeat;
-  background-size:contain;
-  content:'';
-  width: 100%;
-  height:70px;
-  position: absolute;
-  z-index: 2;
-  bottom:-30px;
+  &:after{
+    display: block;
+    background: url('./images/dirt.svg') bottom center no-repeat;
+    background-size:contain;
+    content:'';
+    width: 100%;
+    height:70px;
+    position: absolute;
+    z-index: 2;
+    bottom:-30px;
+  }
 }
 
 .mole {
-  background:url('mole.svg') bottom center no-repeat;
+  background:url('./images/mole.svg') bottom center no-repeat;
   background-size:140px;
   position: absolute;
   top: 100%;
